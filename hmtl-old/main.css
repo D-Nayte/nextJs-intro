@@ -1,0 +1,156 @@
+:root {
+  --path: -;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: rgb(0, 0, 0);
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(32, 32, 32, 1) 10%,
+    rgba(0, 0, 0, 1) 92%
+  );
+}
+
+.container {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  column-gap: 0.25rem;
+  width: 100%;
+  padding: 0 0.3rem;
+  z-index: 10;
+  transform: rotateZ(180deg) rotateY(180deg);
+}
+
+#content {
+  position: absolute;
+  top: 2rem;
+  justify-self: flex-start;
+  align-self: flex-start;
+}
+
+.div {
+  background-color: rgb(255, 255, 255);
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 1rem;
+  box-shadow: inset 0 0 4px 1px purple, 0 0 10px 1px rgb(160, 0, 160);
+  flex-grow: 1;
+}
+
+.div:hover {
+  background-color: rgb(130, 116, 255);
+}
+
+.next-js-logo {
+  /* display: inherit; */
+  position: absolute;
+  width: 132%;
+  height: 132%;
+  background: rgb(41, 41, 41);
+  background: radial-gradient(
+    circle,
+    rgba(41, 41, 41, 1) 0%,
+    rgba(3, 3, 3, 1) 27%,
+    rgba(0, 0, 0, 1) 48%,
+    rgba(66, 66, 66, 1) 57%
+  );
+  transition: all 450ms;
+  mask-image: url("next3.svg");
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  mask-position: center center;
+  -webkit-mask-image: url("next3.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+  -webkit-mask-position: center;
+  transform: translateX(0.4%) translateY(-0.2%);
+}
+
+.next-js-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  border: 6px solid white;
+  border-style: solid;
+  border-radius: 50%;
+  z-index: 0;
+  place-self: center;
+  box-shadow: 0 12px 14px -2px rgb(0, 0, 0),
+    inset 0 0 100px 50px rgb(255, 255, 255), 0 20px 40px 7px rgb(255, 255, 255);
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transform: perspective(400px) rotatex(30deg) translateY(-100px);
+  transition: all 1000ms ease-in-out;
+
+  /* inset 0 0 200px 100px white */
+}
+
+.background {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    171deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(38, 38, 38, 1) 26%,
+    rgba(54, 54, 54, 1) 32%,
+    rgba(19, 19, 19, 1) 40%,
+    rgba(22, 22, 22, 1) 54%,
+    rgba(57, 57, 57, 1) 63%
+  );
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+  transition: all 2000ms ease-out;
+  transition-delay: 1000ms;
+  transition-timing-function: cubic-bezier(0.16, 0.87, 0.33, 1.46);
+  /* box-shadow: 5px 5px 10px 10px red; */
+  border-radius: 50%;
+}
+
+.next-js-wrapper:hover {
+  box-shadow: 0 8px 10px 3px rgb(0, 0, 0), inset 0 0 20px 0px white,
+    0 10px 40px 7px white;
+}
+
+.next-js-wrapper:hover .background {
+  transform: rotateZ(160deg);
+}
+
+.wrapper {
+  display: flex;
+  /* display: none; */
+  width: 500px;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
+  transition: all 1000ms;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  transform: rotatey(180deg) rotateX(180deg);
+  transition-delay: 670ms;
+  opacity: 0;
+}
+
+.next-js-wrapper:hover .wrapper {
+  transform: rotatey(0) rotateX(0);
+  opacity: 1;
+}

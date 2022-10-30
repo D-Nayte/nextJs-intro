@@ -1,0 +1,30 @@
+:root {
+  --path: -;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: rgb(0, 0, 0);
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(32, 32, 32, 1) 10%,
+    rgba(0, 0, 0, 1) 92%
+  );
+}
