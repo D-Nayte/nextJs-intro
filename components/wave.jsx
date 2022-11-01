@@ -1,12 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { startWave } from "../lib/wave";
 import Logo from "./logo";
+import Text from "./text";
 
 export default function Wave() {
   const audioElem = useRef();
   const [soundBars, setSoundBars] = useState(null);
   const [renderFrame, setRenderFrame] = useState(null);
   const [classes, setClasses] = useState(["next-js-wrapper"]);
+  const [textClasses, setTextClasses] = useState(["text-wrapper"]);
   const [activeBar, setActiveBar] = useState(false);
   let id = 0;
 
@@ -26,6 +28,7 @@ export default function Wave() {
       setTimeout(() => {
         setActiveBar(true);
         setClasses((old) => [...old, "active"]);
+        setTextClasses((old) => [...old, "text-wrapper-active"]);
       }, 1000);
     }
   }, [soundBars]);
@@ -51,6 +54,7 @@ export default function Wave() {
         <audio ref={audioElem} src="transition.mp3"></audio>
       </div>
       <Logo classes={classes} startAnim={startAnim} />
+      <Text classes={textClasses} />
     </>
   );
 }

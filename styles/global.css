@@ -2,6 +2,12 @@
   --path: -;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap");
+/* @font-face {
+  font-family: "Secular One", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap");
+} */
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -35,6 +41,7 @@ main {
   position: absolute;
   display: flex;
   bottom: 0;
+  -moz-column-gap: 0.25rem;
   column-gap: 0.25rem;
   width: 100%;
   padding: 0 0.3rem;
@@ -43,7 +50,7 @@ main {
 }
 
 .div {
-  background-color: rgba(0, 0, 0, 0.89);
+  background-color: rgba(0, 0, 0, 0.74);
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 1rem;
   border-left: 1px solid #ffffff;
@@ -81,6 +88,7 @@ main {
   mask-image: url("/next3.svg");
   mask-repeat: no-repeat;
   mask-size: cover;
+  -webkit-mask-position: center center;
   mask-position: center center;
   -webkit-mask-image: url("/next3.svg");
   -webkit-mask-repeat: no-repeat;
@@ -96,13 +104,14 @@ main {
   align-items: center;
   width: 500px;
   height: 500px;
-  border: 6px solid white;
+  border: 6px solid rgb(255, 255, 255);
+  background-color: black;
   border-style: solid;
   border-radius: 50%;
   z-index: 0;
   place-self: center;
   box-shadow: 0 12px 14px -2px rgb(0, 0, 0),
-    inset 0 0 100px 90px rgb(255, 255, 255), 0 20px 40px 7px rgb(255, 255, 255);
+    inset 0 0 100px 90px rgb(61, 61, 61), 0 10px 40px 7px rgb(134, 134, 134);
   overflow: hidden;
   transform-style: preserve-3d;
   transform: perspective(400px) rotatex(30deg) translateY(-100px);
@@ -110,16 +119,23 @@ main {
     transform 9000ms cubic-bezier(0.19, 1, 0.22, 1) 2500ms;
 }
 
+.next-js-wrapper:hover {
+  transition: none;
+  box-shadow: 0 12px 14px -2px rgb(0, 0, 0),
+    inset 0 0 100px 90px rgb(255, 255, 255), 0 20px 40px 7px white;
+}
+
 .background {
   background: rgb(0, 0, 0);
   background: linear-gradient(
     171deg,
     rgba(0, 0, 0, 1) 0%,
-    rgba(38, 38, 38, 1) 26%,
-    rgba(54, 54, 54, 1) 32%,
-    rgba(19, 19, 19, 1) 40%,
-    rgba(22, 22, 22, 1) 54%,
-    rgba(57, 57, 57, 1) 63%
+    rgba(153, 153, 153, 1) 14%,
+    rgba(52, 52, 52, 1) 36%,
+    rgba(17, 17, 17, 1) 50%,
+    rgba(52, 52, 52, 1) 61%,
+    rgba(153, 153, 153, 1) 74%,
+    rgba(0, 0, 0, 1) 83%
   );
   width: 100%;
   height: 100%;
@@ -156,4 +172,194 @@ main {
 .active .wrapper {
   transform: rotatey(0) rotateX(0);
   opacity: 1;
+}
+
+.text-wrapper {
+  color: white;
+  position: absolute;
+  width: 100%;
+  height: 97%;
+  left: 4rem;
+  font-size: 4rem;
+  font-family: "Secular One";
+  font-family: "Rubik", sans-serif;
+  pointer-events: none;
+}
+
+.text-wrapper :first-child {
+  position: absolute;
+  padding-left: 3rem;
+  color: transparent;
+  -webkit-backdrop-filter: blur(10);
+  backdrop-filter: blur(10);
+  z-index: 2;
+  text-shadow: 3px 5px 6px rgba(155, 155, 155, 0);
+  top: 4rem;
+}
+
+.text-wrapper :nth-child(1)::before {
+  content: "BUILD";
+  font-size: 4rem;
+  position: absolute;
+  left: 3rem;
+  top: 0rem;
+  text-shadow: none;
+  z-index: 1;
+  background-image: linear-gradient(
+    0deg,
+    rgb(161, 161, 161) 0%,
+    rgb(53, 53, 53) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+}
+
+.text-wrapper :nth-child(2) {
+  position: absolute;
+  padding-left: 3rem;
+  color: transparent;
+  -webkit-backdrop-filter: blur(10);
+  backdrop-filter: blur(10);
+  z-index: 2;
+  text-shadow: 3px 5px 6px rgba(155, 155, 155, 0);
+  top: 16rem;
+}
+
+.text-wrapper :nth-child(2)::before {
+  content: "WITH";
+  font-size: 4rem;
+  position: absolute;
+  left: 3rem;
+  top: 0rem;
+  color: blue;
+  text-shadow: none;
+  z-index: 1;
+  background-image: linear-gradient(
+    0deg,
+    rgba(217, 217, 217, 1) 0%,
+    rgba(85, 85, 85, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+}
+
+.text-wrapper-active :first-child {
+  -webkit-animation: 4000ms 1 alternate animate-shadow;
+  animation: 4000ms 1 alternate animate-shadow;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+}
+.text-wrapper-active :first-child::before {
+  -webkit-animation: 4000ms 1 alternate animate-text;
+  animation: 4000ms 1 alternate animate-text;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+}
+.text-wrapper-active :nth-child(2) {
+  -webkit-animation: 4000ms 1 alternate animate-shadow;
+  animation: 4000ms 1 alternate animate-shadow;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+  -webkit-animation-delay: 2000ms;
+  animation-delay: 2000ms;
+}
+.text-wrapper-active :nth-child(2)::before {
+  -webkit-animation: 4000ms 1 alternate animate-text;
+  animation: 4000ms 1 alternate animate-text;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+  -webkit-animation-delay: 2000ms;
+  animation-delay: 2000ms;
+}
+
+@-webkit-keyframes animate-text {
+  0% {
+    font-size: 4rem;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  7% {
+    font-size: 4rem;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    font-size: 8rem;
+  }
+}
+
+@keyframes animate-text {
+  0% {
+    font-size: 4rem;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  7% {
+    font-size: 4rem;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    font-size: 8rem;
+  }
+}
+@-webkit-keyframes animate-shadow {
+  0% {
+    text-shadow: 3px 5px 6px rgba(155, 155, 155, 0);
+    font-size: 4rem;
+    opacity: 1;
+  }
+
+  7% {
+    text-shadow: 3px 5px 6px rgb(155, 155, 155);
+    font-size: 4rem;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    text-shadow: 80px 120px 20px rgb(155, 155, 155);
+    font-size: 3rem;
+  }
+}
+@keyframes animate-shadow {
+  0% {
+    text-shadow: 3px 5px 6px rgba(155, 155, 155, 0);
+    font-size: 4rem;
+    opacity: 1;
+  }
+
+  7% {
+    text-shadow: 3px 5px 6px rgb(155, 155, 155);
+    font-size: 4rem;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    text-shadow: 80px 120px 20px rgb(155, 155, 155);
+    font-size: 3rem;
+  }
 }
