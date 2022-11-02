@@ -8,7 +8,7 @@
 
 ## **How to install**
 
-### after clonign this repo, you can install it with
+### after cloning this repo, you can install it with
 
 ```node
 npm install
