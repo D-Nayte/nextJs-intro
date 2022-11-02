@@ -120,7 +120,7 @@ main {
 }
 
 .next-js-wrapper:hover {
-  transition: none;
+  transition: all 250ms ease-in;
   box-shadow: 0 12px 14px -2px rgb(0, 0, 0),
     inset 0 0 100px 90px rgb(255, 255, 255), 0 20px 40px 7px white;
 }
