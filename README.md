@@ -1,8 +1,8 @@
 # **A Next.js presentation Intro App**
 
-## **What is is**
+## **What ist is**
 
-### is was just used to Intruduce a presentation about the Next.js library
+### is was just used to Introduce a presentation about the Next.js library
 
 <br>
 
