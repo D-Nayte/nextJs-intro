@@ -20,7 +20,7 @@ and start the Server with
 npm run dev
 ```
 
-### got to http://localhost:3000/ and click and the great white button :)
+### got to http://localhost:3000/ and click the great white button :)
 
 <br>
 
